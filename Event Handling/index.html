@@ -1,0 +1,347 @@
+<!-- Activity 1 -->
+ <!-- Task 1 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Click Event Example</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    p {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+</style>
+</head>
+<body>
+
+<button id="changeTextButton">Change Text</button>
+<p id="textParagraph">Original text.</p>
+
+<script>
+    const button = document.getElementById('changeTextButton');
+    const paragraph = document.getElementById('textParagraph');
+    button.addEventListener('click', function() {
+        paragraph.textContent = 'New text after clicking the button.';
+    });
+</script>
+
+</body>
+</html>
+
+<!-- Task 2 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Double-click Event Example</title>
+<style>
+    /* Optional: Styling for clarity */
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        text-align: center;
+    }
+    img {
+        max-width: 300px;
+        transition: opacity 0.3s ease-in-out;
+    }
+</style>
+</head>
+<body>
+
+<img id="toggleImage" src="path_to_your_image.jpg" alt="Image">
+
+<script>
+    const image = document.getElementById('toggleImage');
+    image.addEventListener('dblclick', function() {
+        if (image.style.opacity === '0') {
+            image.style.opacity = '1';
+        } else {
+            image.style.opacity = '0';
+        }
+    });
+</script>
+
+</body>
+</html>
+
+ <!-- Activity 2: Mouse Event -->
+  <!-- Task 3 -->
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Mouseover Event Example</title>
+      <style>
+          #myElement {
+              width: 200px;
+              height: 200px;
+              background-color: lightblue;
+              text-align: center;
+              line-height: 200px;
+              margin: 50px;
+              transition: background-color 0.3s ease;
+          }
+      </style>
+  </head>
+  <body>
+      <div id="myElement">Hover over me!</div>
+     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var element = document.getElementById("myElement");
+        
+            element.addEventListener("mouseover", function() {
+                element.style.backgroundColor = "lightgreen";
+            });
+        
+            element.addEventListener("mouseout", function() {
+                element.style.backgroundColor = "lightblue";
+            });
+        });
+        
+     </script>
+  </body>
+  </html>
+  
+  <!-- Task 4 -->
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Mouse Events Example</title>
+      <style>
+          #myElement {
+              width: 200px;
+              height: 200px;
+              background-color: lightblue;
+              text-align: center;
+              line-height: 200px;
+              margin: 50px;
+              transition: background-color 0.3s ease;
+          }
+      </style>
+  </head>
+  <body>
+      <div id="myElement">Hover over me!</div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var element = document.getElementById("myElement");
+        ;;
+            element.addEventListener("mouseover", function() {
+                element.style.backgroundColor = "lightgreen";
+            });
+        
+            element.addEventListener("mouseout", function() {
+                element.style.backgroundColor = "lightblue";
+            });
+        });
+        
+      </script>
+  </body>
+  </html>
+
+  <!-- Activity 3 Keyboard Events-->
+   <!-- Task 5 -->
+
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Keydown Event Example</title>
+   </head>
+   <body>
+       <input type="text" id="myInput" placeholder="Type something here">
+       <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var inputField = document.getElementById("myInput");
+        
+            inputField.addEventListener("keydown", function(event) {
+                console.log("Key pressed: " + event.key);
+            });
+        });
+        
+       </script>
+   </body>
+   </html>
+
+   <!-- Task 6 -->
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Keyup Event Example</title>
+   </head>
+   <body>
+       <input type="text" id="myInput" placeholder="Type something here">
+       <p id="display"></p>
+       <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var inputField = document.getElementById("myInput");
+            var displayParagraph = document.getElementById("display");
+        
+            inputField.addEventListener("keyup", function() {
+                displayParagraph.textContent = inputField.value;
+            });
+        });
+        
+       </script>
+   </body>
+   </html>
+   
+   <!-- Activity 4 form events-->
+    <!-- task 7 -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form Submit Event Example</title>
+    </head>
+    <body>
+        <form id="myForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <button type="submit">Submit</button>
+        </form>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var form = document.getElementById("myForm");
+            
+                form.addEventListener("submit", function(event) {
+                    event.preventDefault(); // Prevent the default form submission
+            
+                    var formData = new FormData(form); // Create a FormData object from the form
+            
+                    // Log the form data to the console
+                    for (var pair of formData.entries()) {
+                        console.log(pair[0] + ': ' + pair[1]);
+                    }
+                });
+            });
+            
+        </script>
+    </body>
+    </html>
+
+    <!-- task 8 -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Select Change Event Example</title>
+    </head>
+    <body>
+        <label for="mySelect">Choose an option:</label>
+        <select id="mySelect">
+            <option value="Option 1">Option 1</option>
+            <option value="Option 2">Option 2</option>
+            <option value="Option 3">Option 3</option>
+        </select>
+        <p id="display"></p>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var selectElement = document.getElementById("mySelect");
+                var displayParagraph = document.getElementById("display");
+            
+                selectElement.addEventListener("change", function() {
+                    displayParagraph.textContent = "Selected value: " + selectElement.value;
+                });
+            });
+            
+        </script>
+    </body>
+    </html>
+    
+    <!-- Activity 5: event delegation -->
+    <!-- Task 9 -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Event Delegation Example</title>
+    </head>
+    <body>
+        <ul id="myList">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+        </ul>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var list = document.getElementById("myList");
+            
+                list.addEventListener("click", function(event) {
+                    if (event.target && event.target.nodeName === "LI") {
+                        console.log("Clicked item text: " + event.target.textContent);
+                    }
+                });
+            });
+            
+        </script>
+    </body>
+    </html>
+
+    <!-- task 10 -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Event Delegation with Dynamic Elements</title>
+    </head>
+    <body>
+        <div id="parent">
+            <button id="addChild">Add Child</button>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var parentElement = document.getElementById("parent");
+                var addChildButton = document.getElementById("addChild");
+            
+                // Add click event listener to the parent element
+                parentElement.addEventListener("click", function(event) {
+                    if (event.target && event.target.matches(".child")) {
+                        console.log("Clicked child element text: " + event.target.textContent);
+                    }
+                });
+            
+                // Add new child elements dynamically
+                addChildButton.addEventListener("click", function() {
+                    var newChild = document.createElement("div");
+                    newChild.className = "child";
+                    newChild.textContent = "Child " + (parentElement.querySelectorAll('.child').length + 1);
+                    parentElement.appendChild(newChild);
+                });
+            });
+            
+        </script>
+    </body>
+    </html>
+    
+    
+
+    
+    
+   
+
+
