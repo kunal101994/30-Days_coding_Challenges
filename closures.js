@@ -149,11 +149,13 @@ console.log(memoizedSlowFunction(5));
 console.log(memoizedSlowFunction(10));
 
 // Task 8
+// Function to compute factorial
 function factorial(n) {
     if (n === 0 || n === 1) return 1;
     return n * factorial(n - 1);
 }
 
+// Memoization function
 function memoize(fn) {
     const cache = new Map();
 
@@ -174,5 +176,5 @@ function memoize(fn) {
 const memoizedFactorial = memoize(factorial);
 
 console.log(memoizedFactorial(5));
-console.log(memoizedFactorial(5));
-console.log(memoizedFactorial(6));
+console.log(memoizedFactorial(5)); 
+console.log(memoizedFactorial(6)); 
